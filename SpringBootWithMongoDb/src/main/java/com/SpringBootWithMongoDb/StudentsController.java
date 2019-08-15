@@ -1,7 +1,6 @@
 package com.SpringBootWithMongoDb;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,15 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.google.gson.Gson;
 
 //@Controller
 @RestController
@@ -32,13 +27,6 @@ public class StudentsController
 	public StudentsController(StudentInterface studentRep) {
 		super();
 		this.studentRep = studentRep;
-	}
-	
-	@RequestMapping("/")
-	public String homepage()
-	{
-		System.out.println("/ request...");
-		return "index.jsp";
 	}
 	
 	@CrossOrigin(origins="*")
